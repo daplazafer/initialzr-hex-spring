@@ -1,14 +1,7 @@
-# Initialzr Hexagonal Architecture Java Spring
+# Initialzr: Hexagonal Architecture Java Spring
 
-## 0. Requirements
-- Docker
+Initializer for base project in Java SpringBoot web app with hexagonal architecture.
 
-## 1. Setup
+Create and clone a ~~empty~~ repository and run this command with your params:
 
-Run `make rename yourgroupid yourartifactid`
-
-## 2. Build
-`make build`
-
-## 3. Run
-`make run`
+`make install YourGroupId YourArtifactId /path/to/your/repo`
