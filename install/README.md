@@ -1,27 +1,25 @@
-# Hexagonal Architecture Java Spring Project
+# ggroupid: aartifactid
 
-Base project for Java SpringBoot web app with hexagonal architecture.
+aartifactid project
 
 ## 0. Requirements
 - Docker
+- docker-compose
 
 ## 1. Configuration
-Modify `.env` file with your params if needed. 
+Modify `.env` file with your params if needed.
 
-## 2. Maven
-To build the app:
-
-`make build`
-
-To execute the app with default profile:
+## 2. Run
+To run the app standalone:
 
 `make run`
 
-Or you can also specify profile:
+To run the app and all required services:
 
-`make run dev`
+`make up`
 
-## 3. Docker
-To build a docker image:
+You can also run custom profile with:
 
-`make image your-image-name` 
+`make run profile`
+
+`make up profile`

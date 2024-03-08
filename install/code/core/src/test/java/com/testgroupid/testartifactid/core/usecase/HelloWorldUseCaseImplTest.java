@@ -7,7 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 class HelloWorldUseCaseImplTest {
@@ -21,6 +21,6 @@ class HelloWorldUseCaseImplTest {
 
         var result = useCase.getHelloWorld();
 
-        assertEquals("Hello World!", result.message());
+        assertThat(result.message()).isEqualTo("Hello World!");
     }
 }

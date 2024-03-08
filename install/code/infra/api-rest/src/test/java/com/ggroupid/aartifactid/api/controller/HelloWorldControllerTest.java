@@ -12,7 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
@@ -47,6 +47,6 @@ class HelloWorldControllerTest {
 
         var result = controller.helloWorld();
 
-        assertEquals(helloWorld.message(), result.message());
+        assertThat(helloWorld.message()).isEqualTo(result.message());
     }
 }

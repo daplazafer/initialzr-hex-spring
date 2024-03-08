@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  aartifactid:
+    image: aartifactid
+    build:
+      context: .
+      args:
+        DOCKER_IMAGE_MAVEN: ${DOCKER_IMAGE_MAVEN}
+        DOCKER_IMAGE_JAVA: ${DOCKER_IMAGE_JAVA}
+        SERVER_PORT: ${SERVER_PORT}
+        PROFILE: ${PROFILE}
+    environment:
+        PROFILE: ${PROFILE}
+        SERVER_PORT: ${SERVER_PORT}
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"

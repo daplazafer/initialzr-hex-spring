@@ -29,7 +29,6 @@ install:
 	echo "Renaming project references to $(word 1, $(NEWARGS)) and $(word 2, $(NEWARGS))"; \
 	find "$(word 3, $(NEWARGS))" -depth -type d -name 'ggroupid' -execdir mv {} "$(word 1, $(NEWARGS))" \; ; \
 	find "$(word 3, $(NEWARGS))" -depth -type d -name 'aartifactid' -execdir mv {} "$(word 2, $(NEWARGS))" \; ; \
-	echo "Done!"; \
 	}
 
 .PHONY: install
