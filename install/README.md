@@ -10,16 +10,10 @@ aartifactid project
 Modify `.env` file with your params if needed.
 
 ## 2. Run
-To run the app standalone:
+To run the app:
 
 `make run`
-
-To run the app and all required services:
-
-`make up`
 
 You can also run custom profile with:
 
 `make run profile`
-
-`make up profile`

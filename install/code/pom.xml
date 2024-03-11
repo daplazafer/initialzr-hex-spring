@@ -23,10 +23,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>boot</module>
-        <module>core</module>
-        <module>domain</module>
-        <module>infra/api-rest</module>
+        <module>aartifactid-boot</module>
+        <module>aartifactid-core</module>
+        <module>aartifactid-domain</module>
+        <module>aartifactid-infra/aartifactid-api-rest</module>
+        <module>aartifactid-infra/aartifactid-redis</module>
     </modules>
 
     <dependencies>
