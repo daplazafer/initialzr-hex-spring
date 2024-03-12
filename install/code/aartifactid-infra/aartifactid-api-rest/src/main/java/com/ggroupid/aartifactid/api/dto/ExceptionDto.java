@@ -9,7 +9,7 @@ public record ExceptionDto(
         @Schema(description = "Exception message", example = "Error in aartifactid")
         String message,
 
-        @Schema(description = "Timestamp", example = "2033-03-33T03:33:33.033Z")
+        @Schema(description = "Timestamp", example = "2033-03-33T03:33:33.330330330Z")
         Instant timestamp
 
 ) {

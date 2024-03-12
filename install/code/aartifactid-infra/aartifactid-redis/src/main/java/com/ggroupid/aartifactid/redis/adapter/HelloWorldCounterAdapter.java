@@ -1,7 +1,7 @@
 package com.ggroupid.aartifactid.redis.adapter;
 
 import com.ggroupid.aartifactid.domain.port.HelloWorldCounterPort;
-import com.ggroupid.aartifactid.h2.HelloWorldCounterDto;
+import com.ggroupid.aartifactid.redis.dto.HelloWorldCounterDto;
 import com.ggroupid.aartifactid.redis.service.RedisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

@@ -2,6 +2,7 @@ package com.ggroupid.aartifactid.core.usecase;
 
 import com.ggroupid.aartifactid.domain.entity.HelloWorld;
 import com.ggroupid.aartifactid.domain.exception.HelloWorldNotFoundException;
+import com.ggroupid.aartifactid.domain.model.Traceable;
 import com.ggroupid.aartifactid.domain.port.HelloWorldCounterPort;
 import com.ggroupid.aartifactid.domain.repository.HelloWorldRepository;
 import com.ggroupid.aartifactid.domain.usecase.HelloWorldUseCase;
