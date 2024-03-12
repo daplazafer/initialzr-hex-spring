@@ -41,6 +41,6 @@ class HelloWorldH2RepositoryTest {
         then(helloWorldJpaRepository).should(times(1)).findByLanguageCode(any());
         then(helloWorldEntityMapper).should(times(1)).map(any());
         assertThat(result.isPresent()).isTrue();
-        assertThat(result.get().message()).isEqualTo(HelloWorldMother.en().message());
+        assertThat(result.get().greeting()).isEqualTo(HelloWorldMother.en().greeting());
     }
 }

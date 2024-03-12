@@ -39,6 +39,6 @@ class HelloWorldControllerTest {
 
         then(helloWorldUseCase).should(times(1)).execute(any());
         then(helloWorldDtoMapper).should(times(1)).map(any());
-        assertThat(result.message()).isEqualTo(HelloWorldDtoMother.en().message());
+        assertThat(result.greeting()).isEqualTo(HelloWorldDtoMother.en().greeting());
     }
 }

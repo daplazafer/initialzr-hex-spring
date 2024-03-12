@@ -3,8 +3,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 public record HelloWorldDto(
 
-        @Schema(description = "Hello World message", example = "Hello World!")
-        String message
+        @Schema(description = "Hello World greeting", example = "Hello World!")
+        String greeting
 
 ) {
 }

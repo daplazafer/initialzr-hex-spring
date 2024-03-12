@@ -6,7 +6,7 @@ import java.time.Instant;
 
 public record ExceptionDto(
 
-        @Schema(description = "Exception message", example = "Error in aartifactid")
+        @Schema(description = "Exception greeting", example = "Error in aartifactid")
         String message,
 
         @Schema(description = "Timestamp", example = "2033-03-33T03:33:33.330330330Z")

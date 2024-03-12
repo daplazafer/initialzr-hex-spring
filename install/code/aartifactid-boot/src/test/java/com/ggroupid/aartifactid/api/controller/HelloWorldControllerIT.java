@@ -32,7 +32,7 @@ class HelloWorldControllerIT {
                 .andReturn().getResponse();
         var result = mapper.readValue(response.getContentAsByteArray(), HelloWorldDto.class);
 
-        assertThat(result.message()).isEqualTo("Hello World!");
+        assertThat(result.greeting()).isEqualTo("Hello World!");
     }
 
 }

@@ -23,6 +23,6 @@ class HelloWorldEntityMapperTest {
 
         var result = mapper.map(entity);
 
-        assertThat(result.message()).isEqualTo(entity.getMessage());
+        assertThat(result.greeting()).isEqualTo(entity.getMessage());
     }
 }

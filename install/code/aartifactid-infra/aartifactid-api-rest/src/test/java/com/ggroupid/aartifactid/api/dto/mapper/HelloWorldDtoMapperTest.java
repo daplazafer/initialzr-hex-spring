@@ -23,6 +23,6 @@ class HelloWorldDtoMapperTest {
 
         var result = mapper.map(helloWorld);
 
-        assertThat(result.message()).isEqualTo(helloWorld.message());
+        assertThat(result.greeting()).isEqualTo(helloWorld.greeting());
     }
 }

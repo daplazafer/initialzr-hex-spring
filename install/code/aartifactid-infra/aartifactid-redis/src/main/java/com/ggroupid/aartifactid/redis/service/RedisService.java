@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Traceable
@@ -16,7 +18,7 @@ public class RedisService {
         redisTemplate.opsForValue().set(key, value);
     }
 
-    public Object get(String key) {
-        return redisTemplate.opsForValue().get(key);
+    public Optional<Object> get(String key) {
+        return Optional.ofNullable(redisTemplate.opsForValue().get(key));
     }
 }

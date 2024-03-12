@@ -8,6 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -25,7 +27,7 @@ class HelloWorldCounterAdapterTest {
     @Test
     void givenCounterWithValue_whenGetCounter_thenReturnCounterWithThatValue() {
 
-        given(redisService.get("hello-world")).willReturn(HelloWorldCounterDtoMother.withCustomValue(5));
+        given(redisService.get("hello-world")).willReturn(Optional.of(HelloWorldCounterDtoMother.withCustomValue(5)));
 
         var result = helloWorldCounter.getCounter();
 
@@ -36,7 +38,7 @@ class HelloWorldCounterAdapterTest {
     @Test
     void givenCounterWithValue_whenIncrement_thenIncrementCounter() {
 
-        given(redisService.get("hello-world")).willReturn(HelloWorldCounterDtoMother.withCustomValue(0));
+        given(redisService.get("hello-world")).willReturn(Optional.of(HelloWorldCounterDtoMother.withCustomValue(0)));
 
         helloWorldCounter.increment();
 

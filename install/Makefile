@@ -16,7 +16,6 @@ test:
     	mvn test
 
 verify:
-	@echo 'aartifactid: Running integration tests'
 	@make stop > /dev/null 2>&1
 	@docker-compose up -d
 	@docker run --network="host" --rm -v $(shell pwd):$(DOCKER_DIR) -w $(DOCKER_DIR)/code -v $(HOME)/.m2:/root/.m2 -it $(DOCKER_IMAGE_MAVEN) \
@@ -40,4 +39,4 @@ infra:
 stop:
 	@docker-compose -f $(COMPOSE_APP) -f $(COMPOSE_INFRA) down
 
-.PHONY: build test verify clean run stop
+.PHONY: build test verify clean run logs infra stop

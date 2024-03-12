@@ -27,8 +27,9 @@ public class HelloWorldCounterAdapter implements HelloWorldCounterPort {
     @Override
     public int getCounter() {
 
-        var helloWorldCounter = redisService.get(HELLO_WORLD_COUNTER_KEY);
-
-        return Objects.nonNull(helloWorldCounter) ? ((HelloWorldCounterDto) helloWorldCounter).counter() : 0;
+        return redisService.get(HELLO_WORLD_COUNTER_KEY)
+                .map(o -> (HelloWorldCounterDto) o)
+                .map(HelloWorldCounterDto::counter)
+                .orElse(0);
     }
 }
