@@ -5,5 +5,6 @@ public record HelloWorldDto(
 
         @Schema(description = "Hello World message", example = "Hello World!")
         String message
+
 ) {
 }

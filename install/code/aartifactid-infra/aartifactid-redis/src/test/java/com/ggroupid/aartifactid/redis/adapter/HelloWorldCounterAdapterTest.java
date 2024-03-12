@@ -1,6 +1,6 @@
 package com.ggroupid.aartifactid.redis.adapter;
 
-import com.ggroupid.aartifactid.redis.dto.HelloWorldCounterDtoMother;
+import com.ggroupid.aartifactid.h2.HelloWorldCounterDtoMother;
 import com.ggroupid.aartifactid.redis.service.RedisService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

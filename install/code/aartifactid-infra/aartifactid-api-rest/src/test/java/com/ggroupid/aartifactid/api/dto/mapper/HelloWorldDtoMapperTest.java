@@ -1,7 +1,6 @@
 package com.ggroupid.aartifactid.api.dto.mapper;
 
-import com.ggroupid.aartifactid.api.dto.mapper.HelloWorldDtoMapper;
-import com.ggroupid.aartifactid.domain.entity.HelloWorld;
+import com.ggroupid.aartifactid.domain.entity.HelloWorldMother;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
@@ -12,19 +11,18 @@ class HelloWorldDtoMapperTest {
 
     HelloWorldDtoMapper mapper;
 
-    HelloWorld helloWorld;
-
-
     @BeforeEach
     void setUp() {
         mapper = Mappers.getMapper(HelloWorldDtoMapper.class);
-        helloWorld = new HelloWorld("test");
     }
 
     @Test
-    void shouldMapHelloWorldToHelloWorldDto() {
+    void givenHelloWorld_whenMap_thenReturnHelloWorldDto() {
+
+        var helloWorld = HelloWorldMother.en();
+
         var result = mapper.map(helloWorld);
 
-        assertThat(helloWorld.message()).isEqualTo(result.message());
+        assertThat(result.message()).isEqualTo(helloWorld.message());
     }
 }

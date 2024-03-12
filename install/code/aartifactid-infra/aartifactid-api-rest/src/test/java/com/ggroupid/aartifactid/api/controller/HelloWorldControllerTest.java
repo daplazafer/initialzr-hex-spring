@@ -1,10 +1,9 @@
 package com.ggroupid.aartifactid.api.controller;
 
-import com.ggroupid.aartifactid.api.dto.HelloWorldDto;
 import com.ggroupid.aartifactid.api.dto.mapper.HelloWorldDtoMapper;
-import com.ggroupid.aartifactid.domain.entity.HelloWorld;
+import com.ggroupid.aartifactid.api.dto.mapper.HelloWorldDtoMother;
+import com.ggroupid.aartifactid.domain.entity.HelloWorldMother;
 import com.ggroupid.aartifactid.domain.usecase.HelloWorldUseCase;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -30,26 +29,16 @@ class HelloWorldControllerTest {
     @InjectMocks
     HelloWorldController controller;
 
-    HelloWorld helloWorld;
-
-    HelloWorldDto helloWorldDto;
-
-    @BeforeEach
-    void setUp() {
-        helloWorld = new HelloWorld("test");
-        helloWorldDto = new HelloWorldDto(helloWorld.message());
-    }
-
     @Test
-    void givenHelloWorld_whenGetHelloWorld_thenReturnHelloWorld() {
+    void givenLanguageCode_whenGetHelloWorld_thenReturnHelloWorld() {
 
-        given(helloWorldUseCase.execute()).willReturn(helloWorld);
-        given(helloWorldDtoMapper.map(eq(helloWorld))).willReturn(helloWorldDto);
+        given(helloWorldUseCase.execute("en")).willReturn(HelloWorldMother.en());
+        given(helloWorldDtoMapper.map(eq(HelloWorldMother.en()))).willReturn(HelloWorldDtoMother.en());
 
-        var result = controller.helloWorld();
+        var result = controller.helloWorld("en");
 
-        then(helloWorldUseCase).should(times(1)).execute();
+        then(helloWorldUseCase).should(times(1)).execute(any());
         then(helloWorldDtoMapper).should(times(1)).map(any());
-        assertThat(helloWorld.message()).isEqualTo(result.message());
+        assertThat(result.message()).isEqualTo(HelloWorldDtoMother.en().message());
     }
 }

@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SwaggerConfig {
 
-    private static final String TITLE = "My API";
+    private static final String TITLE = "aartifactid API";
     private static final String VERSION = "0.1";
-    private static final String DESCRIPTION = "My API description";
+    private static final String DESCRIPTION = "aartifactid API description";
 
     @Bean
     public OpenAPI customOpenAPI() {

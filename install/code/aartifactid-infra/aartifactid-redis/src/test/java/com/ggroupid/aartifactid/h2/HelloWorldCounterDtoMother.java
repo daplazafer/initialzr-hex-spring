@@ -1,6 +1,4 @@
-package com.ggroupid.aartifactid.redis.dto;
-
-import com.ggroupid.aartifactid.domain.entity.HelloWorld;
+package com.ggroupid.aartifactid.h2;
 
 public class HelloWorldCounterDtoMother {
 

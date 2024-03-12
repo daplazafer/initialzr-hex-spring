@@ -10,4 +10,6 @@ services:
         DOCKER_IMAGE_MAVEN: ${DOCKER_IMAGE_MAVEN}
         DOCKER_IMAGE_JAVA: ${DOCKER_IMAGE_JAVA}
         PROFILE: ${PROFILE}
+    environment:
+      PROFILE: ${PROFILE}
     network_mode: host

@@ -4,6 +4,6 @@ import com.ggroupid.aartifactid.domain.entity.HelloWorld;
 
 public interface HelloWorldUseCase {
 
-    HelloWorld execute();
+    HelloWorld execute(String languageCode);
 
 }
