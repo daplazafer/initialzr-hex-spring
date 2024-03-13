@@ -14,7 +14,7 @@ public class RedisService {
 
     private final RedisTemplate<String, Object> redisTemplate;
 
-    public void store(String key, Object value) {
+    public void put(String key, Object value) {
         redisTemplate.opsForValue().set(key, value);
     }
 

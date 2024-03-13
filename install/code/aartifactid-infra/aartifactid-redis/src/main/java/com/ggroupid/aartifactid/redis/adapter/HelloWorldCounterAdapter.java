@@ -6,8 +6,6 @@ import com.ggroupid.aartifactid.redis.service.RedisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.Objects;
-
 @Component
 @RequiredArgsConstructor
 public class HelloWorldCounterAdapter implements HelloWorldCounterPort {
@@ -21,7 +19,7 @@ public class HelloWorldCounterAdapter implements HelloWorldCounterPort {
 
         var counter = getCounter();
 
-        redisService.store(HELLO_WORLD_COUNTER_KEY, new HelloWorldCounterDto(counter + 1));
+        redisService.put(HELLO_WORLD_COUNTER_KEY, new HelloWorldCounterDto(counter + 1));
     }
 
     @Override
@@ -31,5 +29,11 @@ public class HelloWorldCounterAdapter implements HelloWorldCounterPort {
                 .map(o -> (HelloWorldCounterDto) o)
                 .map(HelloWorldCounterDto::counter)
                 .orElse(0);
+    }
+
+    @Override
+    public void reset() {
+
+        redisService.put(HELLO_WORLD_COUNTER_KEY, new HelloWorldCounterDto(0));
     }
 }

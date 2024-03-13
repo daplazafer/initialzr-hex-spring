@@ -42,6 +42,14 @@ class HelloWorldCounterAdapterTest {
 
         helloWorldCounter.increment();
 
-        then(redisService).should(times(1)).store("hello-world", HelloWorldCounterDtoMother.withCustomValue(1));
+        then(redisService).should(times(1)).put("hello-world", HelloWorldCounterDtoMother.withCustomValue(1));
+    }
+
+    @Test
+    void whenReset_thenResetCounter() {
+
+        helloWorldCounter.reset();
+
+        then(redisService).should(times(1)).put("hello-world", HelloWorldCounterDtoMother.withCustomValue(0));
     }
 }

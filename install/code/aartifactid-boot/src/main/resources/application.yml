@@ -14,6 +14,10 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 
+aartifactid:
+  task:
+    refresh.hello.world.counter: 20000
+
 ---
 
 spring:
@@ -25,5 +29,6 @@ spring:
 
 logging:
   level:
+    com.ggroupid.aartifactid.core.task: DEBUG
     com.ggroupid.aartifactid.core.usecase: DEBUG
     com.ggroupid.aartifactid.domain.model.TracingAspect: TRACE

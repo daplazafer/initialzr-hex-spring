@@ -6,4 +6,6 @@ public interface HelloWorldCounterPort {
 
     int getCounter();
 
+    void reset();
+
 }
