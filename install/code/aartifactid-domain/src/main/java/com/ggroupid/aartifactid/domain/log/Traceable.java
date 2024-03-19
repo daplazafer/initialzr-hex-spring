@@ -1,4 +1,4 @@
-package com.ggroupid.aartifactid.domain.model;
+package com.ggroupid.aartifactid.domain.log;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

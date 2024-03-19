@@ -31,4 +31,4 @@ logging:
   level:
     com.ggroupid.aartifactid.core.task: DEBUG
     com.ggroupid.aartifactid.core.usecase: DEBUG
-    com.ggroupid.aartifactid.domain.model.TracingAspect: TRACE
+    com.ggroupid.aartifactid.domain.log.TracingAspect: TRACE

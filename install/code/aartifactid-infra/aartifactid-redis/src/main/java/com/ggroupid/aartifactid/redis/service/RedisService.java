@@ -1,6 +1,6 @@
 package com.ggroupid.aartifactid.redis.service;
 
-import com.ggroupid.aartifactid.domain.model.Traceable;
+import com.ggroupid.aartifactid.domain.log.Traceable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Traceable
+@RequiredArgsConstructor
 public class RedisService {
 
     private final RedisTemplate<String, Object> redisTemplate;

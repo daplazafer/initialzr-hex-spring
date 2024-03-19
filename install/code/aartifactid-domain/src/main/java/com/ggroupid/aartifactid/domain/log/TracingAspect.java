@@ -1,4 +1,4 @@
-package com.ggroupid.aartifactid.domain.model;
+package com.ggroupid.aartifactid.domain.log;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
@@ -30,7 +30,7 @@ public class TracingAspect {
     private void repository() {
     }
 
-    @Pointcut("within(@com.ggroupid.aartifactid.domain.model.Traceable *) || @annotation(com.ggroupid.aartifactid.domain.model.Traceable)")
+    @Pointcut("within(@com.ggroupid.aartifactid.domain.log.Traceable *) || @annotation(com.ggroupid.aartifactid.domain.log.Traceable)")
     private void traceable() {
     }
 
